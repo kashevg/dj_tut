@@ -1,5 +1,8 @@
 from django.shortcuts import render
+from .models import Inspection
 
 
 def index(request):
-    return render(request, 'blog/index.html')
+    inspection = Inspection()
+    data = inspection.get_list()
+    return render(request, 'blog/index.html', context={'data': data})
