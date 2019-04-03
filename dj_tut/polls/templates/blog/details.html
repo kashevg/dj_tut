@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Certificate: {{ data.certificate_number }} - {{ block.super }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="card">
+    <div class="card-header">
+        {{ data.certificate_number }}
+    </div>
+    <div class="card-body">
+        <h5>ID: {{ data.id }}</h5>
+        <h5>Company: {{ data.business_name }} ({{ data.sector }})</h5>
+        <h5>{{ data.result }}: {{ data.date }}</h5>
+        <h5>Address: {{ data.address.zip }}, {{ data.address.city }}<br>
+            {{ data.address.street }} {{ data.address.number }}</h5>
+    </div>
+</div>
+{% endblock %}

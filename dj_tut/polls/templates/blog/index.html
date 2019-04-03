@@ -7,17 +7,16 @@ Index
 
 
 {% block content %}
-<table>
     {% for item in data %}
-    <tr>
-        <td> {{ item.id }}</td>
-    </tr>
-        {% for key, value in item.items %}
-        <tr>
-            <td> {{ key }}</td>
-            <td> {{ value }}</td>
-        </tr>
-        {% endfor %}
+    <div class="card">
+        <div class="card-header">
+            {{ item.certificate_number }}
+        </div>
+        <div class="card-body">
+            <h5>Company: {{ item.business_name }} ({{ item.sector }})</h5>
+            <h5>{{ item.result }} - {{ item.date }}</h5>
+            <a href="{% url 'poll_details_url' id=item.id %}" class="btn btn-primary">More</a>
+        </div>
+    </div>
     {% endfor %}
-</table>
 {% endblock %}

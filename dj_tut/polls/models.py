@@ -12,4 +12,4 @@ class Inspection(object):
         return [item for item in items]
 
     def get_one(self, id):
-        return self.collection.find_one({'$id': id.upper()})
+        return self.collection.find_one({'id': id.upper()})
